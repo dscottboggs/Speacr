@@ -1,9 +1,11 @@
-# espeak.cr
+# Speacr
+#### Bindings to libespeak (eSpeak) for Crystal
 
-TODO: Write a description here
+The bindings are complete and documented, but use fails currently for me when it
+fails to find an audio device.
+
 
 ## Installation
-
 1. Add the dependency to your `shard.yml`:
 ```yaml
 dependencies:
@@ -15,10 +17,10 @@ dependencies:
 ## Usage
 
 ```crystal
-require "espeak.cr"
+require "Speacr"
+Speacr::Speaker.new.say "something"
 ```
 
-TODO: Write usage instructions here
 
 ## Development
 

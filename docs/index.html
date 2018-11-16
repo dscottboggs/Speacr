@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="">
+  <title>README - </title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="/Speacr" data-name="speacr">
+      <a href="Speacr.html">Speacr</a>
+      
+        <ul>
+  
+  <li class=" " data-id="/Speacr/Speaker" data-name="speacr::speaker">
+      <a href="Speacr/Speaker.html">Speaker</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1>Speacr</h1>
+
+<h4>Bindings to libespeak (eSpeak) for Crystal</h4>
+
+<p>The bindings are complete and documented, but use fails currently for me when it
+fails to find an audio device.</p>
+
+<h2>Installation</h2>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<pre><code class="language-yaml">dependencies:
+  espeak.cr:
+    github: your-github-user/espeak.cr</code></pre>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<h2>Usage</h2>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;Speacr&quot;</span>
+<span class="t">Speacr</span><span class="t">::</span><span class="t">Speaker</span>.<span class="k">new</span>.say <span class="s">&quot;something&quot;</span></code></pre>
+
+<h2>Development</h2>
+
+<p><span class="flag orange">TODO</span>  Write development instructions here</p>
+
+<h2>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/your-github-user/espeak.cr/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/your-github-user" target="_blank">D. Scott Boggs</a> - creator and maintainer</li></ul>
+</div>
+</body>
+</html>
