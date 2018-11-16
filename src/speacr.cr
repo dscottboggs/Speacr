@@ -5,7 +5,10 @@ module Speacr
 
   class Speaker
     DEFAULT_BUFFER_LENGTH = 0
-    @done_chan = Channel(Bool).new
+    private enum FinishedStatus
+      Done
+    end
+    @done_chan = Channel(FinishedStatus).new
     @audio_stream = Channel(Int16).new
     @speaker_id : UInt32 = Random.new.next_u
     @synth_callback : Proc(LibC::Short*, LibC::Int, LibEspeak::Event*, LibC::Int)
@@ -33,7 +36,7 @@ module Speacr
         number_of_samples.times do |offset|
           sample = (audio_data + offset).value
           if sample == 0
-            @done_chan.send true
+            @done_chan.send FinishedStatus::Done
             break
           end
           @audio_stream.send sample
@@ -53,9 +56,15 @@ module Speacr
         0, # no flags
         pointerof(@speaker_id),
         nil) # no "user data" pointer
+      self
     end
 
+    def gets
+      audio_clip = [] of Int16
+      until (data = Channel.receive_first(@done_chan, @audio_stream)) === FinishedStatus::Done
+        audio_clip << data.as Int16
+      end
+      audio_clip
+    end
   end
 end
-
-Speacr::Speaker.new(true).say "test phrase The happy dog ran the entire length of the park, pausing only to sniff the dandelions. "
