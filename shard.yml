@@ -1,0 +1,14 @@
+name: Speacr
+version: 0.1.0
+
+authors:
+  - D. Scott Boggs <scott@tams.tech>
+
+dependencies:
+  autobind:
+    github: j8r/crystal-autobind
+    branch: master
+
+crystal: 0.27.0
+
+license: MIT
